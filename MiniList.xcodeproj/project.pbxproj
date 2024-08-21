@@ -19,6 +19,7 @@
 		EDEB10942C75700F001C82AA /* ModalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB10902C75700F001C82AA /* ModalManager.swift */; };
 		EDEB10972C757DF5001C82AA /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB10962C757DF5001C82AA /* Color+Extensions.swift */; };
 		EDEB10992C758743001C82AA /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB10982C758743001C82AA /* ItemListView.swift */; };
+		EDEB109C2C758899001C82AA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EDEB109B2C758899001C82AA /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDEB109C2C758899001C82AA /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +141,9 @@
 			dependencies = (
 			);
 			name = MiniList;
+			packageProductDependencies = (
+				EDEB109B2C758899001C82AA /* Lottie */,
+			);
 			productName = MiniList;
 			productReference = EDEB10752C752BFB001C82AA /* MiniList.app */;
 			productType = "com.apple.product-type.application";
@@ -167,6 +172,9 @@
 				Base,
 			);
 			mainGroup = EDEB106C2C752BFB001C82AA;
+			packageReferences = (
+				EDEB109A2C758899001C82AA /* XCRemoteSwiftPackageReference "lottie-spm" */,
+			);
 			productRefGroup = EDEB10762C752BFB001C82AA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -408,6 +416,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EDEB109A2C758899001C82AA /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EDEB109B2C758899001C82AA /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDEB109A2C758899001C82AA /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EDEB106D2C752BFB001C82AA /* Project object */;
 }
