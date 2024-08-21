@@ -11,6 +11,13 @@
 		EDEB107B2C752BFB001C82AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB107A2C752BFB001C82AA /* ContentView.swift */; };
 		EDEB107D2C752BFC001C82AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDEB107C2C752BFC001C82AA /* Assets.xcassets */; };
 		EDEB10802C752BFC001C82AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDEB107F2C752BFC001C82AA /* Preview Assets.xcassets */; };
+		EDEB10882C753ED1001C82AA /* OverviewProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB10872C753ED1001C82AA /* OverviewProgressView.swift */; };
+		EDEB108B2C754146001C82AA /* ItemListOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB108A2C754146001C82AA /* ItemListOverlayView.swift */; };
+		EDEB10912C75700F001C82AA /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB108D2C75700F001C82AA /* Modal.swift */; };
+		EDEB10922C75700F001C82AA /* ModalModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB108E2C75700F001C82AA /* ModalModifiers.swift */; };
+		EDEB10932C75700F001C82AA /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB108F2C75700F001C82AA /* ModalView.swift */; };
+		EDEB10942C75700F001C82AA /* ModalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB10902C75700F001C82AA /* ModalManager.swift */; };
+		EDEB10972C757DF5001C82AA /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB10962C757DF5001C82AA /* Color+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +26,13 @@
 		EDEB107A2C752BFB001C82AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EDEB107C2C752BFC001C82AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDEB107F2C752BFC001C82AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EDEB10872C753ED1001C82AA /* OverviewProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewProgressView.swift; sourceTree = "<group>"; };
+		EDEB108A2C754146001C82AA /* ItemListOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListOverlayView.swift; sourceTree = "<group>"; };
+		EDEB108D2C75700F001C82AA /* Modal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
+		EDEB108E2C75700F001C82AA /* ModalModifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalModifiers.swift; sourceTree = "<group>"; };
+		EDEB108F2C75700F001C82AA /* ModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
+		EDEB10902C75700F001C82AA /* ModalManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalManager.swift; sourceTree = "<group>"; };
+		EDEB10962C757DF5001C82AA /* Color+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +65,10 @@
 		EDEB10772C752BFB001C82AA /* MiniList */ = {
 			isa = PBXGroup;
 			children = (
+				EDEB10952C757DE6001C82AA /* Extensions */,
+				EDEB108C2C75700F001C82AA /* Modal View */,
+				EDEB10892C754123001C82AA /* ItemListOverlayView */,
+				EDEB10862C753EB8001C82AA /* Overview */,
 				EDEB10782C752BFB001C82AA /* MiniListApp.swift */,
 				EDEB107A2C752BFB001C82AA /* ContentView.swift */,
 				EDEB107C2C752BFC001C82AA /* Assets.xcassets */,
@@ -65,6 +83,41 @@
 				EDEB107F2C752BFC001C82AA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EDEB10862C753EB8001C82AA /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				EDEB10872C753ED1001C82AA /* OverviewProgressView.swift */,
+			);
+			path = Overview;
+			sourceTree = "<group>";
+		};
+		EDEB10892C754123001C82AA /* ItemListOverlayView */ = {
+			isa = PBXGroup;
+			children = (
+				EDEB108A2C754146001C82AA /* ItemListOverlayView.swift */,
+			);
+			path = ItemListOverlayView;
+			sourceTree = "<group>";
+		};
+		EDEB108C2C75700F001C82AA /* Modal View */ = {
+			isa = PBXGroup;
+			children = (
+				EDEB108D2C75700F001C82AA /* Modal.swift */,
+				EDEB108E2C75700F001C82AA /* ModalModifiers.swift */,
+				EDEB108F2C75700F001C82AA /* ModalView.swift */,
+				EDEB10902C75700F001C82AA /* ModalManager.swift */,
+			);
+			path = "Modal View";
+			sourceTree = "<group>";
+		};
+		EDEB10952C757DE6001C82AA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EDEB10962C757DF5001C82AA /* Color+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +190,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDEB10922C75700F001C82AA /* ModalModifiers.swift in Sources */,
+				EDEB108B2C754146001C82AA /* ItemListOverlayView.swift in Sources */,
+				EDEB10972C757DF5001C82AA /* Color+Extensions.swift in Sources */,
+				EDEB10912C75700F001C82AA /* Modal.swift in Sources */,
+				EDEB10882C753ED1001C82AA /* OverviewProgressView.swift in Sources */,
+				EDEB10932C75700F001C82AA /* ModalView.swift in Sources */,
+				EDEB10942C75700F001C82AA /* ModalManager.swift in Sources */,
 				EDEB107B2C752BFB001C82AA /* ContentView.swift in Sources */,
 				EDEB10792C752BFB001C82AA /* MiniListApp.swift in Sources */,
 			);
