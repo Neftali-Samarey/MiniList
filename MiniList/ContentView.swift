@@ -68,27 +68,6 @@ struct ContentView: View {
     }
 }
 
-public struct ItemListView: View {
-
-    let text: String
-
-    public var body: some View {
-        Rectangle()
-            .overlay {
-                VStack {
-                    Text(text)
-                        .font(.system(size: 18))
-                        .foregroundStyle(Color.black)
-                }
-                //.border(Color.red)
-            }
-            .foregroundStyle(Color.white)
-            .clipShape(RoundedRectangle(cornerRadius: 8))
-            .frame(height: 70, alignment: .center)
-            .shadow(color: Color.gray.opacity(0.5) ,radius: 1.8)
-    }
-}
-
 #Preview {
     ContentView()
 }
