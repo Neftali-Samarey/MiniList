@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EDCAB6F32C7ECBD00088763E /* checkbox-easy.json in Resources */ = {isa = PBXBuildFile; fileRef = EDCAB6F22C7ECBD00088763E /* checkbox-easy.json */; };
+		EDCAB6F52C815F4E0088763E /* EmeraldColorCheckmark.json in Resources */ = {isa = PBXBuildFile; fileRef = EDCAB6F42C815F4E0088763E /* EmeraldColorCheckmark.json */; };
+		EDCAB6F82C8160150088763E /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCAB6F72C8160150088763E /* ProgressView.swift */; };
 		EDEB10792C752BFB001C82AA /* MiniListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB10782C752BFB001C82AA /* MiniListApp.swift */; };
 		EDEB107B2C752BFB001C82AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB107A2C752BFB001C82AA /* ContentView.swift */; };
 		EDEB107D2C752BFC001C82AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDEB107C2C752BFC001C82AA /* Assets.xcassets */; };
@@ -20,9 +23,16 @@
 		EDEB10972C757DF5001C82AA /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB10962C757DF5001C82AA /* Color+Extensions.swift */; };
 		EDEB10992C758743001C82AA /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB10982C758743001C82AA /* ItemListView.swift */; };
 		EDEB109C2C758899001C82AA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EDEB109B2C758899001C82AA /* Lottie */; };
+		EDEB10A02C75892F001C82AA /* ConfettiCheckmark.json in Resources */ = {isa = PBXBuildFile; fileRef = EDEB109F2C75892F001C82AA /* ConfettiCheckmark.json */; };
+		EDF5D4122C85444600F63FA3 /* Merriweather-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF5D4112C85444600F63FA3 /* Merriweather-Regular.ttf */; };
+		EDF5D4152C855F6D00F63FA3 /* EmptyList.json in Resources */ = {isa = PBXBuildFile; fileRef = EDF5D4142C855F6D00F63FA3 /* EmptyList.json */; };
+		EDF5D4172C8560CC00F63FA3 /* Merriweather-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF5D4162C8560CC00F63FA3 /* Merriweather-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EDCAB6F22C7ECBD00088763E /* checkbox-easy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "checkbox-easy.json"; sourceTree = "<group>"; };
+		EDCAB6F42C815F4E0088763E /* EmeraldColorCheckmark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EmeraldColorCheckmark.json; sourceTree = "<group>"; };
+		EDCAB6F72C8160150088763E /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		EDEB10752C752BFB001C82AA /* MiniList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDEB10782C752BFB001C82AA /* MiniListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniListApp.swift; sourceTree = "<group>"; };
 		EDEB107A2C752BFB001C82AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +46,11 @@
 		EDEB10902C75700F001C82AA /* ModalManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalManager.swift; sourceTree = "<group>"; };
 		EDEB10962C757DF5001C82AA /* Color+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		EDEB10982C758743001C82AA /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
+		EDEB109F2C75892F001C82AA /* ConfettiCheckmark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ConfettiCheckmark.json; sourceTree = "<group>"; };
+		EDF5D4112C85444600F63FA3 /* Merriweather-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Regular.ttf"; sourceTree = "<group>"; };
+		EDF5D4132C854D5A00F63FA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EDF5D4142C855F6D00F63FA3 /* EmptyList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EmptyList.json; sourceTree = "<group>"; };
+		EDF5D4162C8560CC00F63FA3 /* Merriweather-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +65,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EDCAB6F62C815FF10088763E /* ProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				EDCAB6F72C8160150088763E /* ProgressView.swift */,
+			);
+			path = ProgressView;
+			sourceTree = "<group>";
+		};
 		EDEB106C2C752BFB001C82AA = {
 			isa = PBXGroup;
 			children = (
@@ -69,7 +92,10 @@
 		EDEB10772C752BFB001C82AA /* MiniList */ = {
 			isa = PBXGroup;
 			children = (
+				EDF5D4132C854D5A00F63FA3 /* Info.plist */,
+				EDEB109D2C7588D8001C82AA /* Resources */,
 				EDEB10952C757DE6001C82AA /* Extensions */,
+				EDCAB6F62C815FF10088763E /* ProgressView */,
 				EDEB108C2C75700F001C82AA /* Modal View */,
 				EDEB10892C754123001C82AA /* ItemListOverlayView */,
 				EDEB10862C753EB8001C82AA /* Overview */,
@@ -123,6 +149,35 @@
 				EDEB10962C757DF5001C82AA /* Color+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EDEB109D2C7588D8001C82AA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EDF5D4102C8543D600F63FA3 /* Fonts */,
+				EDEB109E2C7588E3001C82AA /* Lottie */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EDEB109E2C7588E3001C82AA /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				EDEB109F2C75892F001C82AA /* ConfettiCheckmark.json */,
+				EDF5D4142C855F6D00F63FA3 /* EmptyList.json */,
+				EDCAB6F42C815F4E0088763E /* EmeraldColorCheckmark.json */,
+				EDCAB6F22C7ECBD00088763E /* checkbox-easy.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		EDF5D4102C8543D600F63FA3 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EDF5D4112C85444600F63FA3 /* Merriweather-Regular.ttf */,
+				EDF5D4162C8560CC00F63FA3 /* Merriweather-Bold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,7 +244,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDCAB6F32C7ECBD00088763E /* checkbox-easy.json in Resources */,
+				EDCAB6F52C815F4E0088763E /* EmeraldColorCheckmark.json in Resources */,
+				EDEB10A02C75892F001C82AA /* ConfettiCheckmark.json in Resources */,
 				EDEB10802C752BFC001C82AA /* Preview Assets.xcassets in Resources */,
+				EDF5D4152C855F6D00F63FA3 /* EmptyList.json in Resources */,
+				EDF5D4122C85444600F63FA3 /* Merriweather-Regular.ttf in Resources */,
+				EDF5D4172C8560CC00F63FA3 /* Merriweather-Bold.ttf in Resources */,
 				EDEB107D2C752BFC001C82AA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,6 +265,7 @@
 				EDEB10922C75700F001C82AA /* ModalModifiers.swift in Sources */,
 				EDEB108B2C754146001C82AA /* ItemListOverlayView.swift in Sources */,
 				EDEB10972C757DF5001C82AA /* Color+Extensions.swift in Sources */,
+				EDCAB6F82C8160150088763E /* ProgressView.swift in Sources */,
 				EDEB10912C75700F001C82AA /* Modal.swift in Sources */,
 				EDEB10882C753ED1001C82AA /* OverviewProgressView.swift in Sources */,
 				EDEB10992C758743001C82AA /* ItemListView.swift in Sources */,
@@ -347,6 +409,7 @@
 				DEVELOPMENT_TEAM = X752JDEFHP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MiniList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -376,6 +439,7 @@
 				DEVELOPMENT_TEAM = X752JDEFHP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MiniList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
