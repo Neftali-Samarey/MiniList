@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 public enum ItemCategory: String, CaseIterable {
     case `none`
@@ -51,14 +52,23 @@ struct ContentView: View {
     @State private var text: String = ""
     @State private var keyboardHeight: CGFloat = 0
 
+    // Core Data
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Checklist.name, ascending: true)],
+        animation: .default)
+    private var checklist: FetchedResults<Checklist>
+
     var body: some View {
-        // main content view
         GeometryReader { geometry in
             NavigationStack {
-                List(self.viewModel.items) { item in
-                    ItemListView(category: item.category, text: item.name)
-                        .listRowSeparator(.hidden)
-                        .listRowBackground(colorScheme == .dark ? Color.backgroundDarkOverlay : Color.white)
+                List {
+                    ForEach(checklist, id: \.self) { item in
+                        ItemListView(category: .dairy, text: item.name ?? "No Name")
+                            .listRowSeparator(.hidden)
+                            .listRowBackground(colorScheme == .dark ? Color.backgroundDarkOverlay : Color.white)
+                    }
+                    .onDelete(perform: deleteItem)
                 }
                 .scrollIndicators(ScrollIndicatorVisibility.visible)
                 .listStyle(.plain)
@@ -178,8 +188,9 @@ struct ContentView: View {
     // MARK: - Add CTA
     private var addItemButtonView: some View {
         Button {
+            guard !text.isEmpty else { return }
+            createListing(with: text)
             hasToggledAddMode.toggle()
-            viewModel.add(item: Item(name: "Steak", purchased: false, category: .meats))
         } label: {
             Text("Add to List")
                 .font(.custom("Merriweather-Bold", size: 16.0))
@@ -187,15 +198,41 @@ struct ContentView: View {
                 .padding(.vertical, 12)
                 .padding(.horizontal, 20)
                 .frame(maxWidth: .infinity)
-                .background(Color.black)
+                .background(text.isEmpty ? Color.gray.opacity(0.7) : Color.black)
                 .cornerRadius(25)
         }
         .animation(.easeOut(duration: 0.3), value: keyboardHeight)
+        .disabled(text.isEmpty)
     }
 
     // MARK: - UI Component
     private func presentModalView() {
         hasToggledAddMode.toggle()
+    }
+
+    // MARK: Core Data Create & Delete
+    private func createListing(with title: String) {
+        let newItem = Checklist(context: self.viewContext)
+        newItem.name = title
+
+        do {
+            try self.viewContext.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
+    private func deleteItem(at offsets: IndexSet) {
+        for index in offsets {
+            let checklistItem = checklist[index]
+            viewContext.delete(checklistItem)
+        }
+
+        do {
+            try self.viewContext.save()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 
     // MARK: - UI Configurations

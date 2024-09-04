@@ -27,6 +27,8 @@
 		EDF5D4122C85444600F63FA3 /* Merriweather-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF5D4112C85444600F63FA3 /* Merriweather-Regular.ttf */; };
 		EDF5D4152C855F6D00F63FA3 /* EmptyList.json in Resources */ = {isa = PBXBuildFile; fileRef = EDF5D4142C855F6D00F63FA3 /* EmptyList.json */; };
 		EDF5D4172C8560CC00F63FA3 /* Merriweather-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF5D4162C8560CC00F63FA3 /* Merriweather-Bold.ttf */; };
+		EDF5D41A2C857ACC00F63FA3 /* MiniList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EDF5D4182C857ACC00F63FA3 /* MiniList.xcdatamodeld */; };
+		EDF5D41D2C857C2D00F63FA3 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF5D41C2C857C2D00F63FA3 /* DataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		EDF5D4132C854D5A00F63FA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EDF5D4142C855F6D00F63FA3 /* EmptyList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EmptyList.json; sourceTree = "<group>"; };
 		EDF5D4162C8560CC00F63FA3 /* Merriweather-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Bold.ttf"; sourceTree = "<group>"; };
+		EDF5D4192C857ACC00F63FA3 /* ContentStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ContentStore.xcdatamodel; sourceTree = "<group>"; };
+		EDF5D41C2C857C2D00F63FA3 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 				EDEB10862C753EB8001C82AA /* Overview */,
 				EDEB10782C752BFB001C82AA /* MiniListApp.swift */,
 				EDEB107A2C752BFB001C82AA /* ContentView.swift */,
+				EDF5D41B2C857BD700F63FA3 /* App Services */,
 				EDEB107C2C752BFC001C82AA /* Assets.xcassets */,
 				EDEB107E2C752BFC001C82AA /* Preview Content */,
 			);
@@ -178,6 +183,15 @@
 				EDF5D4162C8560CC00F63FA3 /* Merriweather-Bold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		EDF5D41B2C857BD700F63FA3 /* App Services */ = {
+			isa = PBXGroup;
+			children = (
+				EDF5D41C2C857C2D00F63FA3 /* DataController.swift */,
+				EDF5D4182C857ACC00F63FA3 /* MiniList.xcdatamodeld */,
+			);
+			path = "App Services";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,11 +281,13 @@
 				EDEB10972C757DF5001C82AA /* Color+Extensions.swift in Sources */,
 				EDCAB6F82C8160150088763E /* ProgressView.swift in Sources */,
 				EDEB10912C75700F001C82AA /* Modal.swift in Sources */,
+				EDF5D41A2C857ACC00F63FA3 /* MiniList.xcdatamodeld in Sources */,
 				EDEB10882C753ED1001C82AA /* OverviewProgressView.swift in Sources */,
 				EDEB10992C758743001C82AA /* ItemListView.swift in Sources */,
 				EDEB10932C75700F001C82AA /* ModalView.swift in Sources */,
 				EDEB10942C75700F001C82AA /* ModalManager.swift in Sources */,
 				EDEB107B2C752BFB001C82AA /* ContentView.swift in Sources */,
+				EDF5D41D2C857C2D00F63FA3 /* DataController.swift in Sources */,
 				EDEB10792C752BFB001C82AA /* MiniListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,11 +426,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MiniList/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -440,11 +456,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MiniList/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -499,6 +515,19 @@
 			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		EDF5D4182C857ACC00F63FA3 /* MiniList.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EDF5D4192C857ACC00F63FA3 /* ContentStore.xcdatamodel */,
+			);
+			currentVersion = EDF5D4192C857ACC00F63FA3 /* ContentStore.xcdatamodel */;
+			path = MiniList.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = EDEB106D2C752BFB001C82AA /* Project object */;
 }
