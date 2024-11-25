@@ -8,8 +8,10 @@
 import SwiftUI
 import CoreData
 
-public enum ItemCategory: String, CaseIterable {
-    case `none`
+@objc
+public enum ItemCategory: Int, CaseIterable {
+    case `none` = 0
+    case bank
     case dairy
     case fruits
     case meats
@@ -19,7 +21,9 @@ public enum ItemCategory: String, CaseIterable {
     var iconStringValue: String {
         switch self {
         case .none:
-            return "Milk"
+            return "None"
+        case .bank:
+            return "Bank"
         case .dairy:
             return "Milk"
         case .fruits:
@@ -32,6 +36,37 @@ public enum ItemCategory: String, CaseIterable {
             return "Shampoo"
         }
     }
+
+    var title: String {
+        switch self {
+        case .none:
+            return "None"
+        case .bank:
+            return "Bank"
+        case .dairy:
+            return "Dairy"
+        case .fruits:
+            return "Fruits"
+        case .meats:
+            return "Meats"
+        case .bakery:
+            return "Bakery"
+        case .beauty:
+            return "Beauty"
+        }
+    }
+}
+
+extension Checklist {
+
+    /*var itemCategory: ItemCategory {
+        get {
+            return ItemCategory(rawValue: Int(self.itemCategory.rawValue)) ?? .none
+        }
+        set {
+            self.itemCategory = Int64(newValue.rawValue)
+        }
+    }*/
 }
 
 public struct Item: Identifiable {
@@ -49,8 +84,10 @@ struct ContentView: View {
     @State private var yOffset: CGFloat = 0
     @State private var hasToggledAddMode: Bool = false   // modal visibility
     @State private var isFieldVisible: Bool = false      // field visibility
-    @State private var text: String = ""
+    @State private var text: String = String() //revert
+    @State private var categoryString: String = ""
     @State private var keyboardHeight: CGFloat = 0
+    @State private var categorySelection: ItemCategory = .none
 
     // Core Data
     @Environment(\.managedObjectContext) private var viewContext
@@ -64,7 +101,7 @@ struct ContentView: View {
             NavigationStack {
                 List {
                     ForEach(checklist, id: \.self) { item in
-                        ItemListView(category: .dairy, text: item.name ?? "No Name")
+                        ItemListView(category: .bakery, text: item.name ?? "No Name")
                             .listRowSeparator(.hidden)
                             .listRowBackground(colorScheme == .dark ? Color.backgroundDarkOverlay : Color.white)
                     }
@@ -107,7 +144,7 @@ struct ContentView: View {
         VStack(alignment: .leading, spacing: 25) {
             headerView
             contentFieldView
-            //categoryGridView
+            categoryGridView
             Spacer()
             addItemButtonView
         }
@@ -133,7 +170,7 @@ struct ContentView: View {
     private var headerView: some View {
         HStack {
             Text("New Item")
-                .font(.custom("Merriweather-Bold", size: 24))
+                .font(.custom("Merriweather-Bold", size: 22))
 
             Spacer()
 
@@ -160,16 +197,19 @@ struct ContentView: View {
     private var contentFieldView: some View {
         VStack(alignment: .leading ,spacing: 10) {
             Text("Title")
-                .font(.custom("Merriweather-Regular", size: 16.0))
+                .font(.custom("Merriweather-Regular", size: 15.0))
 
             TextField("Ground Coffee", text: $text)
-                .font(.custom("Merriweather-Regular", size: 16.0))
+                .font(.custom("Merriweather-Regular", size: 15.0))
                 .textInputAutocapitalization(.words)
                 .padding(15)
                 .overlay(
                     RoundedRectangle(cornerRadius: 8)
                         .stroke(Color.gray.opacity(0.7), lineWidth: 1)
                 )
+                .onAppear {
+                    UITextField.appearance().clearButtonMode = .whileEditing
+                }
                 .onDisappear {
                     // cleanup
                     text = ""
@@ -181,7 +221,11 @@ struct ContentView: View {
     private var categoryGridView: some View {
         VStack(alignment: .leading ,spacing: 10) {
             Text("Category")
-                .font(.custom("Merriweather-Regular", size: 16.0))
+                .font(.custom("Merriweather-Regular", size: 15.0))
+
+            CategoryPickerView { categorySelection in
+                self.categorySelection = categorySelection
+            }
         }
     }
 
@@ -189,7 +233,7 @@ struct ContentView: View {
     private var addItemButtonView: some View {
         Button {
             guard !text.isEmpty else { return }
-            createListing(with: text)
+            createListing(with: text, category: self.categorySelection)
             hasToggledAddMode.toggle()
         } label: {
             Text("Add to List")
@@ -211,9 +255,10 @@ struct ContentView: View {
     }
 
     // MARK: Core Data Create & Delete
-    private func createListing(with title: String) {
+    private func createListing(with title: String, category: ItemCategory) {
         let newItem = Checklist(context: self.viewContext)
         newItem.name = title
+        //newItem.category = category.rawValue
 
         do {
             try self.viewContext.save()

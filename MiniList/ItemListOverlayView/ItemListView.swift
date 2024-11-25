@@ -79,7 +79,7 @@ public struct ItemListView: View {
                                     }
                                 }
                         }
-
+                        .sensoryFeedback(.success, trigger: isSelected)
                     }
                 }
                 .padding(.horizontal, 10)

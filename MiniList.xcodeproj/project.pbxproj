@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED6235EF2C881A4100225583 /* CategoryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6235EE2C881A4100225583 /* CategoryPickerView.swift */; };
+		ED6235F22C894C2B00225583 /* Checklist+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6235F02C894C2B00225583 /* Checklist+CoreDataClass.swift */; };
+		ED6235F32C894C2B00225583 /* Checklist+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6235F12C894C2B00225583 /* Checklist+CoreDataProperties.swift */; };
 		EDCAB6F32C7ECBD00088763E /* checkbox-easy.json in Resources */ = {isa = PBXBuildFile; fileRef = EDCAB6F22C7ECBD00088763E /* checkbox-easy.json */; };
 		EDCAB6F52C815F4E0088763E /* EmeraldColorCheckmark.json in Resources */ = {isa = PBXBuildFile; fileRef = EDCAB6F42C815F4E0088763E /* EmeraldColorCheckmark.json */; };
 		EDCAB6F82C8160150088763E /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCAB6F72C8160150088763E /* ProgressView.swift */; };
@@ -16,10 +19,6 @@
 		EDEB10802C752BFC001C82AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDEB107F2C752BFC001C82AA /* Preview Assets.xcassets */; };
 		EDEB10882C753ED1001C82AA /* OverviewProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB10872C753ED1001C82AA /* OverviewProgressView.swift */; };
 		EDEB108B2C754146001C82AA /* ItemListOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB108A2C754146001C82AA /* ItemListOverlayView.swift */; };
-		EDEB10912C75700F001C82AA /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB108D2C75700F001C82AA /* Modal.swift */; };
-		EDEB10922C75700F001C82AA /* ModalModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB108E2C75700F001C82AA /* ModalModifiers.swift */; };
-		EDEB10932C75700F001C82AA /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB108F2C75700F001C82AA /* ModalView.swift */; };
-		EDEB10942C75700F001C82AA /* ModalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB10902C75700F001C82AA /* ModalManager.swift */; };
 		EDEB10972C757DF5001C82AA /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB10962C757DF5001C82AA /* Color+Extensions.swift */; };
 		EDEB10992C758743001C82AA /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB10982C758743001C82AA /* ItemListView.swift */; };
 		EDEB109C2C758899001C82AA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EDEB109B2C758899001C82AA /* Lottie */; };
@@ -32,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED6235EE2C881A4100225583 /* CategoryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerView.swift; sourceTree = "<group>"; };
+		ED6235F02C894C2B00225583 /* Checklist+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Checklist+CoreDataClass.swift"; sourceTree = "<group>"; };
+		ED6235F12C894C2B00225583 /* Checklist+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Checklist+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EDCAB6F22C7ECBD00088763E /* checkbox-easy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "checkbox-easy.json"; sourceTree = "<group>"; };
 		EDCAB6F42C815F4E0088763E /* EmeraldColorCheckmark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EmeraldColorCheckmark.json; sourceTree = "<group>"; };
 		EDCAB6F72C8160150088763E /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
@@ -42,10 +44,6 @@
 		EDEB107F2C752BFC001C82AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EDEB10872C753ED1001C82AA /* OverviewProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewProgressView.swift; sourceTree = "<group>"; };
 		EDEB108A2C754146001C82AA /* ItemListOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListOverlayView.swift; sourceTree = "<group>"; };
-		EDEB108D2C75700F001C82AA /* Modal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
-		EDEB108E2C75700F001C82AA /* ModalModifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalModifiers.swift; sourceTree = "<group>"; };
-		EDEB108F2C75700F001C82AA /* ModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
-		EDEB10902C75700F001C82AA /* ModalManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalManager.swift; sourceTree = "<group>"; };
 		EDEB10962C757DF5001C82AA /* Color+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		EDEB10982C758743001C82AA /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		EDEB109F2C75892F001C82AA /* ConfettiCheckmark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ConfettiCheckmark.json; sourceTree = "<group>"; };
@@ -69,6 +67,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED6235EC2C881A1100225583 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				ED6235ED2C881A2200225583 /* CategoryPicker */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		ED6235ED2C881A2200225583 /* CategoryPicker */ = {
+			isa = PBXGroup;
+			children = (
+				ED6235EE2C881A4100225583 /* CategoryPickerView.swift */,
+			);
+			path = CategoryPicker;
+			sourceTree = "<group>";
+		};
 		EDCAB6F62C815FF10088763E /* ProgressView */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,8 +114,8 @@
 				EDEB109D2C7588D8001C82AA /* Resources */,
 				EDEB10952C757DE6001C82AA /* Extensions */,
 				EDCAB6F62C815FF10088763E /* ProgressView */,
-				EDEB108C2C75700F001C82AA /* Modal View */,
 				EDEB10892C754123001C82AA /* ItemListOverlayView */,
+				ED6235EC2C881A1100225583 /* Components */,
 				EDEB10862C753EB8001C82AA /* Overview */,
 				EDEB10782C752BFB001C82AA /* MiniListApp.swift */,
 				EDEB107A2C752BFB001C82AA /* ContentView.swift */,
@@ -135,17 +149,6 @@
 				EDEB10982C758743001C82AA /* ItemListView.swift */,
 			);
 			path = ItemListOverlayView;
-			sourceTree = "<group>";
-		};
-		EDEB108C2C75700F001C82AA /* Modal View */ = {
-			isa = PBXGroup;
-			children = (
-				EDEB108D2C75700F001C82AA /* Modal.swift */,
-				EDEB108E2C75700F001C82AA /* ModalModifiers.swift */,
-				EDEB108F2C75700F001C82AA /* ModalView.swift */,
-				EDEB10902C75700F001C82AA /* ModalManager.swift */,
-			);
-			path = "Modal View";
 			sourceTree = "<group>";
 		};
 		EDEB10952C757DE6001C82AA /* Extensions */ = {
@@ -188,6 +191,8 @@
 		EDF5D41B2C857BD700F63FA3 /* App Services */ = {
 			isa = PBXGroup;
 			children = (
+				ED6235F02C894C2B00225583 /* Checklist+CoreDataClass.swift */,
+				ED6235F12C894C2B00225583 /* Checklist+CoreDataProperties.swift */,
 				EDF5D41C2C857C2D00F63FA3 /* DataController.swift */,
 				EDF5D4182C857ACC00F63FA3 /* MiniList.xcdatamodeld */,
 			);
@@ -276,18 +281,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDEB10922C75700F001C82AA /* ModalModifiers.swift in Sources */,
 				EDEB108B2C754146001C82AA /* ItemListOverlayView.swift in Sources */,
 				EDEB10972C757DF5001C82AA /* Color+Extensions.swift in Sources */,
 				EDCAB6F82C8160150088763E /* ProgressView.swift in Sources */,
-				EDEB10912C75700F001C82AA /* Modal.swift in Sources */,
 				EDF5D41A2C857ACC00F63FA3 /* MiniList.xcdatamodeld in Sources */,
 				EDEB10882C753ED1001C82AA /* OverviewProgressView.swift in Sources */,
 				EDEB10992C758743001C82AA /* ItemListView.swift in Sources */,
-				EDEB10932C75700F001C82AA /* ModalView.swift in Sources */,
-				EDEB10942C75700F001C82AA /* ModalManager.swift in Sources */,
+				ED6235F32C894C2B00225583 /* Checklist+CoreDataProperties.swift in Sources */,
 				EDEB107B2C752BFB001C82AA /* ContentView.swift in Sources */,
 				EDF5D41D2C857C2D00F63FA3 /* DataController.swift in Sources */,
+				ED6235F22C894C2B00225583 /* Checklist+CoreDataClass.swift in Sources */,
+				ED6235EF2C881A4100225583 /* CategoryPickerView.swift in Sources */,
 				EDEB10792C752BFB001C82AA /* MiniListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
