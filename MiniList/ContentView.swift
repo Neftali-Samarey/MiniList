@@ -7,16 +7,22 @@
 
 import SwiftUI
 import CoreData
+import Lottie
 
-@objc
-public enum ItemCategory: Int, CaseIterable {
-    case `none` = 0
+
+public enum ItemCategory: String, CaseIterable {
+    case `none`
     case bank
     case dairy
     case fruits
     case meats
     case bakery
     case beauty
+    case pet
+
+    var imageName: String {
+        return self.rawValue
+    }
 
     var iconStringValue: String {
         switch self {
@@ -34,6 +40,8 @@ public enum ItemCategory: Int, CaseIterable {
             return "Bakery"
         case .beauty:
             return "Shampoo"
+        case .pet:
+            return "Pet"
         }
     }
 
@@ -53,20 +61,10 @@ public enum ItemCategory: Int, CaseIterable {
             return "Bakery"
         case .beauty:
             return "Beauty"
+        case .pet:
+            return "Pets"
         }
     }
-}
-
-extension Checklist {
-
-    /*var itemCategory: ItemCategory {
-        get {
-            return ItemCategory(rawValue: Int(self.itemCategory.rawValue)) ?? .none
-        }
-        set {
-            self.itemCategory = Int64(newValue.rawValue)
-        }
-    }*/
 }
 
 public struct Item: Identifiable {
@@ -96,21 +94,52 @@ struct ContentView: View {
         animation: .default)
     private var checklist: FetchedResults<Checklist>
 
+    // test
+    @State private var categoryIndexedSelections = 0
+
+    private func mapItemCategoryAsset(with checklist: Checklist) -> ItemCategory {
+        guard let itemCategory = checklist.itemCategory else { return .none }
+        return itemCategory.self
+    }
+
     var body: some View {
         GeometryReader { geometry in
             NavigationStack {
-                List {
-                    ForEach(checklist, id: \.self) { item in
-                        ItemListView(category: .bakery, text: item.name ?? "No Name")
-                            .listRowSeparator(.hidden)
-                            .listRowBackground(colorScheme == .dark ? Color.backgroundDarkOverlay : Color.white)
+                VStack {
+                    if !checklist.isEmpty {
+                        VStack {
+                            Picker("What is your favorite color?", selection: $categoryIndexedSelections) {
+                                Text("All").tag(0)
+                                Text("Completed").tag(1)
+                            }
+                            .pickerStyle(.segmented)
+                        }
+                        .padding(.horizontal, 15)
+
+                        List {
+                            ForEach(checklist, id: \.self) { item in
+                                ItemListView(category: mapItemCategoryAsset(with: item), text: item.name ?? "No Name")
+                                    .listRowSeparator(.hidden)
+                                    .listRowBackground(colorScheme == .dark ? Color.backgroundDarkOverlay : Color.white)
+                            }
+                            .onDelete(perform: deleteItem)
+                        }
+                        .scrollIndicators(ScrollIndicatorVisibility.visible)
+                        .listStyle(.plain)
+                        .listSectionSeparator(.hidden)
+                        .animation(.spring(.bouncy, blendDuration: 0.9), value: self.viewModel.count > 0)
+                    } else {
+                        VStack(spacing: 10) {
+                            LottieView(animationName: LottieFileManager.animation(with: .empty))
+                                .frame(height: geometry.size.height / 3)
+                                .overlay(alignment: .bottom) {
+                                    Text(allGoodTitle)
+                                        .font(.custom("Merriweather-Regular", size: 22))
+                                        .foregroundStyle(colorScheme == .dark ? Color.white : Color.black.opacity(0.45))
+                                }
+                        }
                     }
-                    .onDelete(perform: deleteItem)
                 }
-                .scrollIndicators(ScrollIndicatorVisibility.visible)
-                .listStyle(.plain)
-                .listSectionSeparator(.hidden)
-                .animation(.spring(.bouncy, blendDuration: 0.9), value: self.viewModel.count > 0)
                 .navigationTitle("MiniList")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
@@ -257,8 +286,14 @@ struct ContentView: View {
     // MARK: Core Data Create & Delete
     private func createListing(with title: String, category: ItemCategory) {
         let newItem = Checklist(context: self.viewContext)
+        newItem.id = UUID()
         newItem.name = title
-        //newItem.category = category.rawValue
+        newItem.category = category.rawValue.data(using: .utf8)
+
+        /*if let uiImage = UIImage(named: category.iconStringValue),
+           let imageData = uiImage.pngData() {
+            newItem.category = imageData
+        }*/
 
         do {
             try self.viewContext.save()
@@ -297,4 +332,11 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+}
+
+extension ContentView {
+
+    var allGoodTitle: String {
+        "All Goods!"
+    }
 }

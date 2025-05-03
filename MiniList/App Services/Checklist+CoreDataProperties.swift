@@ -19,8 +19,15 @@ extension Checklist {
     @NSManaged public var id: UUID?
     @NSManaged public var name: String?
     @NSManaged public var purchased: Bool
-    @NSManaged public var category: Int16
+    @NSManaged public var category: Data?
 
+    var itemCategory: ItemCategory? {
+        guard let categoryData = category,
+              let categoryString = String(data: categoryData, encoding: .utf8) else {
+            return nil
+        }
+        return ItemCategory(rawValue: categoryString)
+    }
 }
 
 extension Checklist : Identifiable {
