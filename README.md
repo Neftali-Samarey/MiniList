@@ -6,7 +6,7 @@ Created a small list app in SwiftUI to test different UI components and SwiftUI'
 
 Here's a walkthrough of implemented app running on simulator
 <p align="center">
-<img src='images/FILENAME' title='App Walkthrough' width='270px' alt='App Walkthrough' />
+<img src='images/minilist-ui.gif' title='App Walkthrough' width='270px' alt='App Walkthrough' />
 </p>
 
 ## License
